@@ -10,7 +10,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testLoginSuccess(){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
 
         loginPage.loginCRM("admin@example.com", "123456");
         loginPage.verifyLoginSuccess();
@@ -18,7 +18,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testLoginFailWithEmailInvalid(){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
 
         loginPage.loginCRM("admin123@example.com", "123456");
         loginPage.verifyLoginFail("Invalid email or password");
@@ -26,7 +26,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testLoginFailWithPasswordInvalid(){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
 
         loginPage.loginCRM("admin@example.com", "123");
         loginPage.verifyLoginFail("Invalid email or password");
@@ -34,7 +34,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testLoginFailWithEmailNull(){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
 
         loginPage.loginCRM("", "123");
         loginPage.verifyLoginFail("The Email Address field is required.");
@@ -42,7 +42,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testLoginFailWithPasswordNull(){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
 
         loginPage.loginCRM("admin@example.com", "");
         loginPage.verifyLoginFail("The Password field is required.");

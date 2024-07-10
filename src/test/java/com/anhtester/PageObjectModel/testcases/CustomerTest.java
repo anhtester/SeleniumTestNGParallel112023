@@ -17,12 +17,11 @@ public class CustomerTest extends BaseTest {
     ProjectPage projectPage;
 
     @Test
-    @Parameters({"customerName"})
-    public void testAddNewCustomer(String customerName) {
+    public void testAddNewCustomer() {
 
-        String CUSTOMER_NAME = customerName;
+        String CUSTOMER_NAME = "AN_Customer_01";
 
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         dashboardPage = loginPage.loginCRM("admin@example.com", "123456");
 
         customerPage = dashboardPage.clickMenuCustomer(); //Hàm này nằm bên CommonPage

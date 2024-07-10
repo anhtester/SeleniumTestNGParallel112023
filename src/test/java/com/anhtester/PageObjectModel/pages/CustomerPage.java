@@ -1,5 +1,6 @@
 package com.anhtester.PageObjectModel.pages;
 
+import com.anhtester.drivers.DriverManager;
 import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,12 +10,8 @@ import org.testng.Assert;
 import static com.anhtester.keywords.WebUI.*;
 
 public class CustomerPage extends CommonPage {
-    private WebDriver driver;
 
-    public CustomerPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        new WebUI(driver);
+    public CustomerPage() {
     }
 
     //Elements
@@ -46,8 +43,8 @@ public class CustomerPage extends CommonPage {
     }
 
     public String getTotalCustomers() {
-        waitForPageLoaded(driver);
-        return driver.findElement(totalCustomers).getText();
+        waitForPageLoaded();
+        return WebUI.getElementText(totalCustomers);
     }
 
     public void selectLanguage(String languageName) {
@@ -82,21 +79,21 @@ public class CustomerPage extends CommonPage {
         setKey(selectCountry, Keys.ENTER);
         sleep(1);
         clickElement(buttonSave);
-        sleep(2);
-        Assert.assertTrue(checkElementExist(driver, alertMessage), "\uD83D\uDC1E FAIL!! The alert message success not display.");
-        Assert.assertEquals(driver.findElement(alertMessage).getText().trim(), "Customer added successfully.", "\uD83D\uDC1E FAIL!! The content of alert message not match.");
+        WebUI.waitForPageLoaded();
+        Assert.assertTrue(checkElementExist(alertMessage), "\uD83D\uDC1E FAIL!! The alert message success not display.");
+        Assert.assertEquals(DriverManager.getDriver().findElement(alertMessage).getText().trim(), "Customer added successfully.", "\uD83D\uDC1E FAIL!! The content of alert message not match.");
     }
 
     public void checkCustomerInTableList(String customerName) {
-        waitForPageLoaded(driver);
+        waitForPageLoaded();
         clickElement(menuCustomers);
-        waitForPageLoaded(driver);
+        waitForPageLoaded();
         setText(inputSearchCustomer, customerName);
-        waitForPageLoaded(driver);
+        waitForPageLoaded();
         sleep(2);
 
         //Check customer name display in table
-        Assert.assertTrue(checkElementExist(driver, firstItemCustomerName), "\uD83D\uDC1E FAIL!! The customer name not display in table.");
+        Assert.assertTrue(checkElementExist(firstItemCustomerName), "\uD83D\uDC1E FAIL!! The customer name not display in table.");
         //Assert.assertEquals(driver.findElement(firstItemCustomerName).getText(), customerName, "\uD83D\uDC1E FAILL!! The customer name not match.");
 
         assertEquals(getElementText(firstItemCustomerName), customerName, "\uD83D\uDC1E FAIL!! The customer name not match.");
@@ -105,9 +102,9 @@ public class CustomerPage extends CommonPage {
 
     public void checkCustomerDetail(String customerName) {
         //Check cutsomer detail in Customer Detail page
-        waitForPageLoaded(driver);
+        waitForPageLoaded();
         clickElement(firstItemCustomerName);
-        waitForPageLoaded(driver);
+        waitForPageLoaded();
         assertEquals(getElementAttribute(inputCompany, "value"), customerName, "FAIL!! The Company name not match.");
         assertEquals(getElementAttribute(inputVat, "value"), "10", "FAIL!! The VAT value not match.");
         assertEquals(getElementAttribute(inputPhone, "value"), "123456", "FAIL!! The Phone value not match.");

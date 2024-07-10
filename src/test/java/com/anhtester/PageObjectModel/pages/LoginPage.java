@@ -1,21 +1,17 @@
 package com.anhtester.PageObjectModel.pages;
 
 import com.anhtester.constants.ConfigData;
+import com.anhtester.drivers.DriverManager;
 import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class LoginPage extends CommonPage {
-    //Khai báo driver cục bộ
-    private WebDriver driver;
     private String URL = "https://crm.anhtester.com/admin/authentication";
 
     //Hàm xây dựng cho từng class Page
-    public LoginPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        new WebUI(driver); //Khởi tạo class WebUI để truyền giá trị driver
+    public LoginPage() {
     }
 
     //Khai báo các element dạng đối tượng By
@@ -51,13 +47,13 @@ public class LoginPage extends CommonPage {
         enterPassword(password);
         clickLoginButton();
 
-        return new DashboardPage(driver);
+        return new DashboardPage();
     }
 
     public void verifyLoginSuccess() {
         WebUI.waitForPageLoaded();
         Assert.assertTrue(WebUI.checkElementExist(menuDashboard), "\uD83D\uDC1E FAIL!! Can not redirect to Dashboard page.");
-        Assert.assertEquals(driver.getCurrentUrl(), "https://crm.anhtester.com/admin/", "\uD83D\uDC1E FAIL!! The current url not match.");
+        Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), "https://crm.anhtester.com/admin/", "\uD83D\uDC1E FAIL!! The current url not match.");
     }
 
     public void verifyLoginFail(String expectedMessage) {

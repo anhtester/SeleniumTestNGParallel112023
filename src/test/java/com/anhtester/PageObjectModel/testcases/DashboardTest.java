@@ -12,7 +12,7 @@ public class DashboardTest extends BaseTest {
 
     @Test(priority = 1)
     public void testCheckSectionQuickStatisticsDisplay(){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         dashboardPage = loginPage.loginCRM("admin@example.com", "123456");
 
         //dashboardPage = new DashboardPage(driver);
@@ -22,13 +22,13 @@ public class DashboardTest extends BaseTest {
 
     @Test(priority = 2)
     public void testCheckTotalSectionQuickStatistics(){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         dashboardPage = loginPage.loginCRM("admin@example.com", "123456");
 
         //dashboardPage = new DashboardPage(driver);
-        dashboardPage.checkTotalInvoicesAwaitingPayment("3 / 3");
-        dashboardPage.checkTotalConvertedLeads();
-        dashboardPage.checkTotalProjectsInProgress();
-        dashboardPage.checkTotalTasksNotFinished();
+        dashboardPage.checkTotalInvoicesAwaitingPayment("5 / 5");
+        dashboardPage.checkTotalConvertedLeads("6 / 12");
+        dashboardPage.checkTotalProjectsInProgress("2 / 2");
+        dashboardPage.checkTotalTasksNotFinished("20 / 21");
     }
 }

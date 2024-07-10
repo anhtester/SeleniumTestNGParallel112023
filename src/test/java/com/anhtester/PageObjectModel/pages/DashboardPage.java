@@ -1,16 +1,17 @@
 package com.anhtester.PageObjectModel.pages;
 
+import com.anhtester.drivers.DriverManager;
 import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class DashboardPage extends CommonPage {
-    private WebDriver driver;
 
-    public DashboardPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
+    SoftAssert softAssert = new SoftAssert();
+
+    public DashboardPage() {
     }
 
     private By buttonDashboardOptions = By.xpath("//div[normalize-space()='Dashboard Options']");
@@ -22,38 +23,40 @@ public class DashboardPage extends CommonPage {
     private By sectionQuickStatistics = By.xpath("//div[@id='widget-top_stats']");
 
     public void clickButtonDashboardOptions(){
-        WebUI.waitForPageLoaded(driver);
-        System.out.println(WebUI.checkElementExist(driver, buttonDashboardOptions));
-        driver.findElement(buttonDashboardOptions).click();
+        WebUI.waitForPageLoaded();
+        System.out.println(WebUI.checkElementExist(buttonDashboardOptions));
+        WebUI.clickElement(buttonDashboardOptions);
     }
 
     public void verifyCheckboxQuickStatistics(){
         WebUI.sleep(1);
-        Assert.assertTrue(driver.findElement(checkboxQuickStatistics).isSelected(), "FAIL!! The value of checkbox Quick Statistics not match.");
-        Assert.assertTrue(driver.findElement(sectionQuickStatistics).isDisplayed(), "FAI!! The section Quick Statistics not display.");
+        Assert.assertTrue(DriverManager.getDriver().findElement(checkboxQuickStatistics).isSelected(), "FAIL!! The value of checkbox Quick Statistics not match.");
+        Assert.assertTrue(DriverManager.getDriver().findElement(sectionQuickStatistics).isDisplayed(), "FAI!! The section Quick Statistics not display.");
     }
 
     public void checkTotalInvoicesAwaitingPayment(String value) {
-        WebUI.waitForPageLoaded(driver);
-        Assert.assertTrue(WebUI.checkElementExist(driver, totalInvoicesAwaitingPayment), "The section Invoices Awaiting Payment not display.");
-        Assert.assertEquals(driver.findElement(totalInvoicesAwaitingPayment).getText(), value, "FAIL!! Invoices Awaiting Payment total not match.");
+        WebUI.waitForPageLoaded();
+        softAssert.assertTrue(WebUI.checkElementExist(totalInvoicesAwaitingPayment), "The section Invoices Awaiting Payment not display.");
+        softAssert.assertEquals(DriverManager.getDriver().findElement(totalInvoicesAwaitingPayment).getText(), value, "FAIL!! Invoices Awaiting Payment total not match.");
     }
 
-    public void checkTotalConvertedLeads() {
-        WebUI.waitForPageLoaded(driver);
-        Assert.assertTrue(WebUI.checkElementExist(driver, totalConvertedLeads), "The section Converted Leads not display.");
-        Assert.assertEquals(driver.findElement(totalConvertedLeads).getText(), "1 / 5", "FAIL!! Converted Leads total not match.");
+    public void checkTotalConvertedLeads(String value) {
+        WebUI.waitForPageLoaded();
+        softAssert.assertTrue(WebUI.checkElementExist(totalConvertedLeads), "The section Converted Leads not display.");
+        softAssert.assertEquals(DriverManager.getDriver().findElement(totalConvertedLeads).getText(), value, "FAIL!! Converted Leads total not match.");
     }
 
-    public void checkTotalProjectsInProgress() {
-        WebUI.waitForPageLoaded(driver);
-        Assert.assertTrue(WebUI.checkElementExist(driver, totalProjectsInProgress), "The section Projects In Progress not display.");
-        Assert.assertEquals(driver.findElement(totalProjectsInProgress).getText(), "4 / 4", "FAIL!! Projects In Progress total not match.");
+    public void checkTotalProjectsInProgress(String value) {
+        WebUI.waitForPageLoaded();
+        softAssert.assertTrue(WebUI.checkElementExist(totalProjectsInProgress), "The section Projects In Progress not display.");
+        softAssert.assertEquals(DriverManager.getDriver().findElement(totalProjectsInProgress).getText(), value, "FAIL!! Projects In Progress total not match.");
     }
 
-    public void checkTotalTasksNotFinished() {
-        WebUI.waitForPageLoaded(driver);
-        Assert.assertTrue(WebUI.checkElementExist(driver, totalTasksNotFinished), "The section Tasks Not Finished not display.");
-        Assert.assertEquals(driver.findElement(totalTasksNotFinished).getText(), "8 / 8", "FAIL!! Tasks Not Finished total not match.");
+    public void checkTotalTasksNotFinished(String value) {
+        WebUI.waitForPageLoaded();
+        softAssert.assertTrue(WebUI.checkElementExist(totalTasksNotFinished), "The section Tasks Not Finished not display.");
+        softAssert.assertEquals(DriverManager.getDriver().findElement(totalTasksNotFinished).getText(), value, "FAIL!! Tasks Not Finished total not match.");
+
+        softAssert.assertAll();
     }
 }

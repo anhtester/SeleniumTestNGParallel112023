@@ -6,11 +6,13 @@ import org.openqa.selenium.WebDriver;
 
 public class CommonPage {
 
-    private WebDriver driver;
+    private LoginPage loginPage;
+    private DashboardPage dashboardPage;
+    private CustomerPage customerPage;
+    private ProjectPage projectPage;
 
-    public CommonPage(WebDriver driver){
-        this.driver = driver;
-        new WebUI(driver);
+    public CommonPage() {
+
     }
 
     public By menuDashboard = By.xpath("//span[normalize-space()='Dashboard']");
@@ -19,25 +21,53 @@ public class CommonPage {
     public By menuProjects = By.xpath("//span[normalize-space()='Projects']");
     public By itemNotifications = By.xpath("//a[contains(@class,'notifications-icon')]");
 
-    public DashboardPage clickMenuDashboard(){
-        WebUI.waitForPageLoaded(driver);
+    public LoginPage getLoginPage() {
+        if(loginPage == null){
+            loginPage = new LoginPage();
+        }
+        return loginPage;
+    }
+
+    public DashboardPage getDashboardPage() {
+        if(dashboardPage == null){
+            dashboardPage = new DashboardPage();
+        }
+        return dashboardPage;
+    }
+
+    public CustomerPage getCustomerPage() {
+        if(customerPage == null){
+            customerPage = new CustomerPage();
+        }
+        return customerPage;
+    }
+
+    public ProjectPage getProjectPage() {
+        if(projectPage == null){
+            projectPage = new ProjectPage();
+        }
+        return projectPage;
+    }
+
+    public DashboardPage clickMenuDashboard() {
+        WebUI.waitForPageLoaded();
         WebUI.clickElement(menuDashboard);
 
-        return new DashboardPage(driver);
+        return new DashboardPage();
     }
 
-    public CustomerPage clickMenuCustomer(){
-        WebUI.waitForPageLoaded(driver);
+    public CustomerPage clickMenuCustomer() {
+        WebUI.waitForPageLoaded();
         WebUI.clickElement(menuCustomers);
 
-        return new CustomerPage(driver);
+        return new CustomerPage();
     }
 
-    public ProjectPage clickMenuProjects(){
-        WebUI.waitForPageLoaded(driver);
+    public ProjectPage clickMenuProjects() {
+        WebUI.waitForPageLoaded();
         WebUI.clickElement(menuProjects);
 
-        return new ProjectPage(driver);
+        return new ProjectPage();
     }
 
 }
