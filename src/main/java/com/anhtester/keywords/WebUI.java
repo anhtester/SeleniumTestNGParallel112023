@@ -1,6 +1,8 @@
 package com.anhtester.keywords;
 
+import com.anhtester.constants.ConfigData;
 import com.anhtester.drivers.DriverManager;
+import com.anhtester.helpers.PropertiesHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -15,9 +17,9 @@ import java.util.List;
 
 public class WebUI {
 
-    private static int EXPLICIT_WAIT_TIMEOUT = 10;
-    private static double STEP_TIME = 0;
-    private static int PAGE_LOAD_TIMEOUT = 40;
+    private static int EXPLICIT_WAIT_TIMEOUT = ConfigData.EXPLICIT_WAIT_TIMEOUT;
+    private static double STEP_TIME =  ConfigData.STEP_TIME;
+    private static int PAGE_LOAD_TIMEOUT =  ConfigData.PAGE_LOAD_TIMEOUT;
 
     public static void sleep(double second) {
         try {
@@ -307,7 +309,7 @@ public class WebUI {
 
     public static void waitForElementVisible(By by) {
         try {
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(EXPLICIT_WAIT_TIMEOUT), Duration.ofMillis(500));
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigData.EXPLICIT_WAIT_TIMEOUT), Duration.ofMillis(500));
             wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for the element Visible. " + by.toString());

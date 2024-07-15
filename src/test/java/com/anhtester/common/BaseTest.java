@@ -1,21 +1,29 @@
 package com.anhtester.common;
 
 import com.anhtester.drivers.DriverManager;
+import com.anhtester.helpers.PropertiesHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 public class BaseTest {
+
+    @BeforeSuite
+    public void setupEnvironment(){
+        PropertiesHelper.loadAllFiles();
+    }
 
     @BeforeMethod
     @Parameters({"browser"})
     public void createDriver(@Optional("chrome") String browser) {
-        WebDriver driver = setupDriver(browser);
+        WebDriver driver;
+        if(PropertiesHelper.getValue("BROWSER") != null && !PropertiesHelper.getValue("BROWSER").isEmpty()){
+            driver = setupDriver(PropertiesHelper.getValue("BROWSER"));
+        }else {
+            driver = setupDriver(browser);
+        }
         DriverManager.setDriver(driver); //Gán giá trị driver vào trong ThreadLocal
     }
 
