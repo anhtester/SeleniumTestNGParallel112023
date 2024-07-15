@@ -2,6 +2,7 @@ package com.anhtester.Bai27_PropertiesConfig.testcases;
 
 import com.anhtester.Bai27_PropertiesConfig.pages.LoginPage;
 import com.anhtester.common.BaseTest;
+import com.anhtester.constants.ConfigData;
 import com.anhtester.helpers.PropertiesHelper;
 import org.testng.annotations.Test;
 
@@ -10,15 +11,17 @@ public class LoginTest extends BaseTest {
     private LoginPage loginPage;
 
     @Test
-    public void testLoginSuccess(){
+    public void testLoginSuccess() {
         loginPage = new LoginPage();
 
-        loginPage.loginCRM("admin@example.com", "123456");
+        loginPage.loginCRM(ConfigData.EMAIL, ConfigData.PASSWORD);
         loginPage.verifyLoginSuccess();
+
+        PropertiesHelper.setValue("ACTIVE", "true");
     }
 
     @Test
-    public void testLoginFailWithEmailInvalid(){
+    public void testLoginFailWithEmailInvalid() {
         loginPage = new LoginPage();
 
         loginPage.loginCRM("admin123@example.com", "123456");
@@ -26,7 +29,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void testLoginFailWithPasswordInvalid(){
+    public void testLoginFailWithPasswordInvalid() {
         loginPage = new LoginPage();
 
         loginPage.loginCRM("admin@example.com", "123");
@@ -34,7 +37,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void testLoginFailWithEmailNull(){
+    public void testLoginFailWithEmailNull() {
         loginPage = new LoginPage();
 
         loginPage.loginCRM("", "123");
@@ -42,7 +45,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void testLoginFailWithPasswordNull(){
+    public void testLoginFailWithPasswordNull() {
         loginPage = new LoginPage();
 
         loginPage.loginCRM("admin@example.com", "");
