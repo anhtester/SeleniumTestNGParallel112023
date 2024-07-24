@@ -1,7 +1,7 @@
-package com.anhtester.PageObjectModel.testcases;
+package com.anhtester.Bai28_ExcelFileData.testcases;
 
-import com.anhtester.PageObjectModel.pages.DashboardPage;
-import com.anhtester.PageObjectModel.pages.LoginPage;
+import com.anhtester.Bai28_ExcelFileData.pages.DashboardPage;
+import com.anhtester.Bai28_ExcelFileData.pages.LoginPage;
 import com.anhtester.common.BaseTest;
 import org.testng.annotations.Test;
 

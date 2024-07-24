@@ -2,12 +2,12 @@
 
 <suite name="Suite Parallel Testing" verbose="1">
     <test name="Parallel Testing in POM 1" parallel="methods">
-        <parameter name="browser" value="firefox"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.anhtester.PageObjectModel.testcases.LoginTest">
-                <methods>
-                    <include name="testLoginSuccess"/>
-                </methods>
+<!--                <methods>-->
+<!--                    <include name="testLoginSuccess"/>-->
+<!--                </methods>-->
             </class>
         </classes>
     </test>

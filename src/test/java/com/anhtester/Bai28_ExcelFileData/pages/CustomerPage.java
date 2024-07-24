@@ -1,10 +1,10 @@
-package com.anhtester.PageObjectModel.pages;
+package com.anhtester.Bai28_ExcelFileData.pages;
 
 import com.anhtester.drivers.DriverManager;
+import com.anhtester.helpers.ExcelHelper;
 import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import static com.anhtester.keywords.WebUI.*;
@@ -52,11 +52,14 @@ public class CustomerPage extends CommonPage {
         clickElement(By.xpath("//span[normalize-space()='" + languageName + "']"));
     }
 
-    public void enterDataAddNewCustomer(String customerName) {
-        setText(inputCompany, customerName);
-        setText(inputVat, "10");
-        setText(inputPhone, "123456");
-        setText(inputWebsite, "https://anhtester.com");
+    public void enterDataAddNewCustomer(String customerName, int row) {
+        ExcelHelper excelHelper = new ExcelHelper();
+        excelHelper.setExcelFile("src/test/resources/testdata/Login.xlsx", "Customer");
+
+        setText(inputCompany, excelHelper.getCellData("CUSTOMER_NAME", row));
+        setText(inputVat, excelHelper.getCellData("VAT", row));
+        setText(inputPhone, excelHelper.getCellData("PHONE", row));
+        setText(inputWebsite, excelHelper.getCellData("WEBSITE", row));
         clickElement(selectGroups);
         sleep(1);
         setText(inputGroups, "VIP");

@@ -1,10 +1,9 @@
-package com.anhtester.PageObjectModel.pages;
+package com.anhtester.Bai28_ExcelFileData.pages;
 
 import com.anhtester.constants.ConfigData;
 import com.anhtester.drivers.DriverManager;
 import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class LoginPage extends CommonPage {
@@ -22,6 +21,8 @@ public class LoginPage extends CommonPage {
     private By errorMessage = By.xpath("//div[contains(@class,'alert alert-danger')]");
 
     private By menuDashboard = By.xpath("//span[normalize-space()='Dashboard']");
+    private By dropdownProfile = By.xpath("//li[contains(@class,'user-profile')]");
+    private By optionLogout = By.xpath("//a[text()='Logout']");
 
     //Khai báo các hàm xử lý thuộc trang Login
     public void enterEmail(String email){
@@ -37,6 +38,11 @@ public class LoginPage extends CommonPage {
     public void clickLoginButton(){
         //driver.findElement(buttonLogin).click();
         WebUI.clickElement(buttonLogin);
+    }
+
+    public void logout(){
+        WebUI.clickElement(dropdownProfile);
+        WebUI.clickElement(optionLogout);
     }
 
     public DashboardPage loginCRM(String email, String password) {

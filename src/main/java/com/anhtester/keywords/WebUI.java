@@ -61,14 +61,14 @@ public class WebUI {
     }
 
     public static void clickElement(By by) {
-        waitForElementVisible(by);
+        waitForElementClickable(by);
         sleep(STEP_TIME);
         getWebElement(by).click();
         logConsole("\uD83D\uDFE2 Click element: " + by);
     }
 
     public static void clickElement(By by, long timeout) {
-        waitForElementVisible(by);
+        waitForElementClickable(by);
         sleep(STEP_TIME);
         getWebElement(by).click();
         logConsole("\uD83D\uDFE2 Click element: " + by);
@@ -378,12 +378,7 @@ public class WebUI {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    public static void waitForElementVisible(WebDriver driver, By by, int second) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(second));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-    }
-
-    public static void waitForElementToBeClickable(WebDriver driver, By by) {
+    public static void waitForElementToBeClickable(By by) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(by));
     }
