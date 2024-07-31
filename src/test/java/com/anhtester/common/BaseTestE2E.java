@@ -1,6 +1,6 @@
 package com.anhtester.common;
 
-import com.anhtester.PageObjectModel.pages.CommonPage;
+import com.anhtester.Bai26_PageObjectModel_Parallel.pages.CommonPage;
 import com.anhtester.drivers.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

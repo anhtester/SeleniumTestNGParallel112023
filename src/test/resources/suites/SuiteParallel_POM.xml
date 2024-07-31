@@ -4,7 +4,7 @@
     <test name="Parallel Testing in POM 1" parallel="methods">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.anhtester.PageObjectModel.testcases.LoginTest">
+            <class name="com.anhtester.Bai26_PageObjectModel_Parallel.testcases.LoginTest">
 <!--                <methods>-->
 <!--                    <include name="testLoginSuccess"/>-->
 <!--                </methods>-->
