@@ -1,11 +1,13 @@
 package com.anhtester.common;
 
 import com.anhtester.drivers.DriverManager;
+import com.anhtester.helpers.CaptureHelper;
 import com.anhtester.helpers.PropertiesHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 public class BaseTest {
@@ -69,7 +71,12 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void closeDriver(){
+    public void closeDriver(ITestResult iTestResult){
+
+        if(iTestResult.getStatus() == ITestResult.FAILURE){
+            CaptureHelper.screenshot(iTestResult.getName());
+        }
+
         DriverManager.quit();
     }
 
