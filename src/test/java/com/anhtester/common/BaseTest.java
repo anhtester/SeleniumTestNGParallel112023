@@ -3,27 +3,25 @@ package com.anhtester.common;
 import com.anhtester.drivers.DriverManager;
 import com.anhtester.helpers.CaptureHelper;
 import com.anhtester.helpers.PropertiesHelper;
+import com.anhtester.listeners.TestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ThreadGuard;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+@Listeners(TestListener.class)
 public class BaseTest {
-
-    @BeforeSuite
-    public void setupEnvironment(){
-        PropertiesHelper.loadAllFiles();
-    }
 
     @BeforeMethod
     @Parameters({"browser"})
     public void createDriver(@Optional("chrome") String browser) {
         WebDriver driver;
-        if(PropertiesHelper.getValue("BROWSER") != null && !PropertiesHelper.getValue("BROWSER").isEmpty()){
+        if (PropertiesHelper.getValue("BROWSER") != null && !PropertiesHelper.getValue("BROWSER").isEmpty()) {
             driver = setupDriver(PropertiesHelper.getValue("BROWSER"));
-        }else {
+        } else {
             driver = setupDriver(browser);
         }
         DriverManager.setDriver(driver); //Gán giá trị driver vào trong ThreadLocal
@@ -71,12 +69,7 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void closeDriver(ITestResult iTestResult){
-
-        if(iTestResult.getStatus() == ITestResult.FAILURE){
-            CaptureHelper.screenshot(iTestResult.getName());
-        }
-
+    public void closeDriver() {
         DriverManager.quit();
     }
 

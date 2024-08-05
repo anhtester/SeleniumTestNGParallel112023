@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite Smoke Test" verbose="1">
+
+    <test name="Demo Test Listener">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.anhtester.Bai31_TestListener.testcases.LoginTest">
+                <methods>
+                    <include name="testLoginSuccess"/>
+                </methods>
+            </class>
+            <class name="com.anhtester.Bai31_TestListener.testcases.DashboardTest">
+                <methods>
+                    <include name="testCheckSectionQuickStatisticsDisplay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

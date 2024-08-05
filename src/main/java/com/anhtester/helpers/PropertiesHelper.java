@@ -31,6 +31,7 @@ public class PropertiesHelper {
                 tempProp.load(file);
                 properties.putAll(tempProp);
             }
+            System.out.println("Loaded all properties: " + properties);
             return properties;
         } catch (IOException ioe) {
             return new Properties();
