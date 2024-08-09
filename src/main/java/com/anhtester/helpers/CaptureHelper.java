@@ -2,6 +2,7 @@ package com.anhtester.helpers;
 
 import com.anhtester.constants.ConfigData;
 import com.anhtester.drivers.DriverManager;
+import com.anhtester.utils.LogUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
@@ -91,9 +92,9 @@ public class CaptureHelper extends ScreenRecorder {
 
         try {
             FileHandler.copy(source, new File(ConfigData.SCREENSHOT_PATH + imageName + "-" + dateFormat.format(new Date()) + ".png"));
-            System.out.println("Screenshot successfully !!");
+            LogUtils.info("Screenshot successfully !!");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            LogUtils.error(e.getMessage());
         }
     }
 }

@@ -1,0 +1,208 @@
+[INFO] 09-08-2024 21:05:48 [main] LogUtils - ⭐️ ********* START TESTING SeleniumTestNGParallel112023 *********
+[INFO] 09-08-2024 21:05:48 [main] LogUtils - Loaded all properties: {BROWSER=, SCREENSHOT_STEP_FAIL=true, RECORD_VIDEO=true, SCREENSHOT_PATH=./exports/screenshots/, EMAIL=admin@example.com, URL=https://crm.anhtester.com/admin/authentication, PAGE_LOAD_TIMEOUT=40, STEP_TIME=0, SCREENSHOT_STEP_PASS=false, RECORD_VIDEO_PATH=./exports/videos/, PASSWORD=123456, SCREENSHOT_STEP_ALL=false, EXPLICIT_WAIT_TIMEOUT=10}
+[INFO] 09-08-2024 21:05:48 [main] LogUtils - Row: 2 - Column: 11
+[INFO] 09-08-2024 21:05:48 [main] LogUtils - StartRow: 1 - EndRow: 1
+[INFO] 09-08-2024 21:06:17 [TestNG-PoolService-1] LogUtils - ➡️ Starting test case testAddNewCustomer
+[INFO] 09-08-2024 21:06:19 [TestNG-PoolService-1] LogUtils - 🌐 Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 09-08-2024 21:06:19 [TestNG-PoolService-1] LogUtils - 🟢 Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 09-08-2024 21:06:19 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 123456 on element By.xpath: //input[@id='password']
+[INFO] 09-08-2024 21:06:21 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[normalize-space()='Login']
+[INFO] 09-08-2024 21:06:22 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Customers']
+[INFO] 09-08-2024 21:06:22 [TestNG-PoolService-1] LogUtils - ➡️ Get text: 98
+[INFO] 09-08-2024 21:06:22 [TestNG-PoolService-1] LogUtils - 🍀 Total Customers Before: 98
+[INFO] 09-08-2024 21:06:22 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //a[normalize-space()='New Customer']
+[INFO] 09-08-2024 21:06:22 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Viettel_03 on element By.xpath: //input[@id='company']
+[INFO] 09-08-2024 21:06:22 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 10 on element By.xpath: //input[@id='vat']
+[INFO] 09-08-2024 21:06:22 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 123456 on element By.xpath: //input[@id='phonenumber']
+[INFO] 09-08-2024 21:06:22 [TestNG-PoolService-1] LogUtils - 🟢 Set text: https://viettel.com.vn on element By.xpath: //input[@id='website']
+[INFO] 09-08-2024 21:06:22 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='groups_in[]']
+[INFO] 09-08-2024 21:06:23 [TestNG-PoolService-1] LogUtils - 🟢 Set text: VIP on element By.xpath: //button[@data-id='groups_in[]']/following-sibling::div//input
+[INFO] 09-08-2024 21:06:26 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='groups_in[]']
+[INFO] 09-08-2024 21:06:26 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='default_language']
+[INFO] 09-08-2024 21:06:26 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Vietnamese']
+[INFO] 09-08-2024 21:06:27 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Cau Giay on element By.xpath: //textarea[@id='address']
+[INFO] 09-08-2024 21:06:27 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Ha Noi on element By.xpath: //input[@id='city']
+[INFO] 09-08-2024 21:06:27 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Ha Noi on element By.xpath: //input[@id='state']
+[INFO] 09-08-2024 21:06:27 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 12345 on element By.xpath: //input[@id='zip']
+[INFO] 09-08-2024 21:06:27 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='country']
+[INFO] 09-08-2024 21:06:28 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Vietnam on element By.xpath: //button[@data-id='country']/following-sibling::div//input
+[INFO] 09-08-2024 21:06:31 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //div[@id='profile-save-section']//button[normalize-space()='Save']
+[INFO] 09-08-2024 21:06:33 [TestNG-PoolService-1] LogUtils - ✅ Check Element Exist: true ---> By.xpath: //span[@class='alert-title']
+[INFO] 09-08-2024 21:06:33 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Customers']
+[INFO] 09-08-2024 21:06:33 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Viettel_03 on element By.xpath: //div[@id='clients_filter']//input[@placeholder='Search...']
+[INFO] 09-08-2024 21:06:37 [TestNG-PoolService-1] LogUtils - ✅ Check Element Exist: true ---> By.xpath: //tbody/tr[1]/td[3]/a
+[INFO] 09-08-2024 21:06:37 [TestNG-PoolService-1] LogUtils - ➡️ Get text: Viettel_03
+[INFO] 09-08-2024 21:06:37 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Viettel_03 🟰 Viettel_03
+[INFO] 09-08-2024 21:06:37 [TestNG-PoolService-1] LogUtils - ➡️ Get text: 99
+[INFO] 09-08-2024 21:06:37 [TestNG-PoolService-1] LogUtils - 🍀 Total Customers After: 99
+[INFO] 09-08-2024 21:06:37 [TestNG-PoolService-1] LogUtils - ➡️ Get text: 99
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //tbody/tr[1]/td[3]/a
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: Viettel_03
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Viettel_03 🟰 Viettel_03
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: 10
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: 10 🟰 10
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: 123456
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: 123456 🟰 123456
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: https://viettel.com.vn
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: https://viettel.com.vn 🟰 https://viettel.com.vn
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: VIP
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: VIP 🟰 VIP
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: Vietnamese
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Vietnamese 🟰 Vietnamese
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: Cau Giay
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Cau Giay 🟰 Cau Giay
+[INFO] 09-08-2024 21:06:38 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Projects']
+[INFO] 09-08-2024 21:06:39 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //a[normalize-space()='New Project']
+[INFO] 09-08-2024 21:06:39 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='clientid']
+[INFO] 09-08-2024 21:06:40 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Viettel_03 on element By.xpath: //button[@data-id='clientid']/following-sibling::div//input
+[INFO] 09-08-2024 21:06:41 [TestNG-PoolService-1] LogUtils - ✅ Test case testAddNewCustomer passed.
+[INFO] 09-08-2024 21:06:41 [main] LogUtils - ⭐️ ********* END TESTING SeleniumTestNGParallel112023 *********
+[INFO] 09-08-2024 21:07:23 [main] LogUtils - ⭐️ ********* START TESTING SeleniumTestNGParallel112023 *********
+[INFO] 09-08-2024 21:07:23 [main] LogUtils - Loaded all properties: {BROWSER=, SCREENSHOT_STEP_FAIL=true, RECORD_VIDEO=false, SCREENSHOT_PATH=./exports/screenshots/, EMAIL=admin@example.com, URL=https://crm.anhtester.com/admin/authentication, PAGE_LOAD_TIMEOUT=40, STEP_TIME=0, SCREENSHOT_STEP_PASS=false, RECORD_VIDEO_PATH=./exports/videos/, PASSWORD=123456, SCREENSHOT_STEP_ALL=false, EXPLICIT_WAIT_TIMEOUT=10}
+[INFO] 09-08-2024 21:07:23 [main] LogUtils - Row: 2 - Column: 11
+[INFO] 09-08-2024 21:07:23 [main] LogUtils - StartRow: 1 - EndRow: 1
+[INFO] 09-08-2024 21:07:25 [TestNG-PoolService-1] LogUtils - ➡️ Starting test case testAddNewCustomer
+[INFO] 09-08-2024 21:07:26 [TestNG-PoolService-1] LogUtils - 🌐 Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 09-08-2024 21:07:26 [TestNG-PoolService-1] LogUtils - 🟢 Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 09-08-2024 21:07:26 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 123456 on element By.xpath: //input[@id='password']
+[INFO] 09-08-2024 21:07:27 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[normalize-space()='Login']
+[INFO] 09-08-2024 21:07:28 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Customers']
+[INFO] 09-08-2024 21:07:28 [TestNG-PoolService-1] LogUtils - ➡️ Get text: 99
+[INFO] 09-08-2024 21:07:28 [TestNG-PoolService-1] LogUtils - 🍀 Total Customers Before: 99
+[INFO] 09-08-2024 21:07:28 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //a[normalize-space()='New Customer']
+[INFO] 09-08-2024 21:07:28 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Viettel_03 on element By.xpath: //input[@id='company']
+[INFO] 09-08-2024 21:07:28 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 10 on element By.xpath: //input[@id='vat']
+[INFO] 09-08-2024 21:07:28 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 123456 on element By.xpath: //input[@id='phonenumber']
+[INFO] 09-08-2024 21:07:28 [TestNG-PoolService-1] LogUtils - 🟢 Set text: https://viettel.com.vn on element By.xpath: //input[@id='website']
+[INFO] 09-08-2024 21:07:28 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='groups_in[]']
+[INFO] 09-08-2024 21:07:29 [TestNG-PoolService-1] LogUtils - 🟢 Set text: VIP on element By.xpath: //button[@data-id='groups_in[]']/following-sibling::div//input
+[INFO] 09-08-2024 21:07:31 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='groups_in[]']
+[INFO] 09-08-2024 21:07:31 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='default_language']
+[INFO] 09-08-2024 21:07:32 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Vietnamese']
+[INFO] 09-08-2024 21:07:33 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Cau Giay on element By.xpath: //textarea[@id='address']
+[INFO] 09-08-2024 21:07:33 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Ha Noi on element By.xpath: //input[@id='city']
+[INFO] 09-08-2024 21:07:33 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Ha Noi on element By.xpath: //input[@id='state']
+[INFO] 09-08-2024 21:07:33 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 12345 on element By.xpath: //input[@id='zip']
+[INFO] 09-08-2024 21:07:33 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='country']
+[INFO] 09-08-2024 21:07:34 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Vietnam on element By.xpath: //button[@data-id='country']/following-sibling::div//input
+[INFO] 09-08-2024 21:07:36 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //div[@id='profile-save-section']//button[normalize-space()='Save']
+[INFO] 09-08-2024 21:07:38 [TestNG-PoolService-1] LogUtils - ✅ Check Element Exist: true ---> By.xpath: //span[@class='alert-title']
+[INFO] 09-08-2024 21:07:39 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Customers']
+[INFO] 09-08-2024 21:07:39 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Viettel_03 on element By.xpath: //div[@id='clients_filter']//input[@placeholder='Search...']
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ✅ Check Element Exist: true ---> By.xpath: //tbody/tr[1]/td[3]/a
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Get text: Viettel_03
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Viettel_03 🟰 Viettel_03
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Get text: 100
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - 🍀 Total Customers After: 100
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Get text: 100
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //tbody/tr[1]/td[3]/a
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: Viettel_03
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Viettel_03 🟰 Viettel_03
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: 10
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: 10 🟰 10
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: 123456
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: 123456 🟰 123456
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: https://viettel.com.vn
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: https://viettel.com.vn 🟰 https://viettel.com.vn
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: VIP
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: VIP 🟰 VIP
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: Vietnamese
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Vietnamese 🟰 Vietnamese
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: Cau Giay
+[INFO] 09-08-2024 21:07:43 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Cau Giay 🟰 Cau Giay
+[INFO] 09-08-2024 21:07:44 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Projects']
+[INFO] 09-08-2024 21:07:44 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //a[normalize-space()='New Project']
+[INFO] 09-08-2024 21:07:44 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='clientid']
+[INFO] 09-08-2024 21:07:45 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Viettel_03 on element By.xpath: //button[@data-id='clientid']/following-sibling::div//input
+[INFO] 09-08-2024 21:07:46 [TestNG-PoolService-1] LogUtils - ✅ Test case testAddNewCustomer passed.
+[INFO] 09-08-2024 21:07:47 [main] LogUtils - ⭐️ ********* END TESTING SeleniumTestNGParallel112023 *********
+[INFO] 09-08-2024 21:16:58 [main] LogUtils - ⭐️ ********* START TESTING SeleniumTestNGParallel112023 *********
+[INFO] 09-08-2024 21:16:58 [main] LogUtils - Loaded all properties: {BROWSER=, SCREENSHOT_STEP_FAIL=true, RECORD_VIDEO=true, SCREENSHOT_PATH=./exports/screenshots/, EMAIL=admin@example.com, URL=https://crm.anhtester.com/admin/authentication, PAGE_LOAD_TIMEOUT=40, STEP_TIME=0, SCREENSHOT_STEP_PASS=false, RECORD_VIDEO_PATH=./exports/videos/, PASSWORD=123456, SCREENSHOT_STEP_ALL=true, EXPLICIT_WAIT_TIMEOUT=10}
+[INFO] 09-08-2024 21:16:58 [main] LogUtils - Row: 2 - Column: 11
+[INFO] 09-08-2024 21:16:58 [main] LogUtils - StartRow: 1 - EndRow: 1
+[INFO] 09-08-2024 21:16:59 [TestNG-PoolService-1] LogUtils - ➡️ Starting test case testAddNewCustomer
+[INFO] 09-08-2024 21:17:01 [TestNG-PoolService-1] LogUtils - 🌐 Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 09-08-2024 21:17:01 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:01 [TestNG-PoolService-1] LogUtils - 🟢 Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 09-08-2024 21:17:02 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:02 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 123456 on element By.xpath: //input[@id='password']
+[INFO] 09-08-2024 21:17:02 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:04 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[normalize-space()='Login']
+[INFO] 09-08-2024 21:17:04 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:04 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Customers']
+[INFO] 09-08-2024 21:17:04 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:04 [TestNG-PoolService-1] LogUtils - ➡️ Get text: 100
+[INFO] 09-08-2024 21:17:04 [TestNG-PoolService-1] LogUtils - 🍀 Total Customers Before: 100
+[INFO] 09-08-2024 21:17:05 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //a[normalize-space()='New Customer']
+[INFO] 09-08-2024 21:17:05 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:05 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Viettel_03 on element By.xpath: //input[@id='company']
+[INFO] 09-08-2024 21:17:05 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:05 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 10 on element By.xpath: //input[@id='vat']
+[INFO] 09-08-2024 21:17:05 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:05 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 123456 on element By.xpath: //input[@id='phonenumber']
+[INFO] 09-08-2024 21:17:05 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:05 [TestNG-PoolService-1] LogUtils - 🟢 Set text: https://viettel.com.vn on element By.xpath: //input[@id='website']
+[INFO] 09-08-2024 21:17:06 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:06 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='groups_in[]']
+[INFO] 09-08-2024 21:17:06 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:07 [TestNG-PoolService-1] LogUtils - 🟢 Set text: VIP on element By.xpath: //button[@data-id='groups_in[]']/following-sibling::div//input
+[INFO] 09-08-2024 21:17:07 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:08 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:09 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='groups_in[]']
+[INFO] 09-08-2024 21:17:10 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:10 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='default_language']
+[INFO] 09-08-2024 21:17:10 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:10 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Vietnamese']
+[INFO] 09-08-2024 21:17:10 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:11 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Cau Giay on element By.xpath: //textarea[@id='address']
+[INFO] 09-08-2024 21:17:11 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:11 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Ha Noi on element By.xpath: //input[@id='city']
+[INFO] 09-08-2024 21:17:11 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:12 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Ha Noi on element By.xpath: //input[@id='state']
+[INFO] 09-08-2024 21:17:12 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:12 [TestNG-PoolService-1] LogUtils - 🟢 Set text: 12345 on element By.xpath: //input[@id='zip']
+[INFO] 09-08-2024 21:17:12 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:12 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='country']
+[INFO] 09-08-2024 21:17:12 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:13 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Vietnam on element By.xpath: //button[@data-id='country']/following-sibling::div//input
+[INFO] 09-08-2024 21:17:13 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:15 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:16 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //div[@id='profile-save-section']//button[normalize-space()='Save']
+[INFO] 09-08-2024 21:17:16 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:18 [TestNG-PoolService-1] LogUtils - ✅ Check Element Exist: true ---> By.xpath: //span[@class='alert-title']
+[INFO] 09-08-2024 21:17:19 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Customers']
+[INFO] 09-08-2024 21:17:19 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:19 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Viettel_03 on element By.xpath: //div[@id='clients_filter']//input[@placeholder='Search...']
+[INFO] 09-08-2024 21:17:19 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:23 [TestNG-PoolService-1] LogUtils - ✅ Check Element Exist: true ---> By.xpath: //tbody/tr[1]/td[3]/a
+[INFO] 09-08-2024 21:17:23 [TestNG-PoolService-1] LogUtils - ➡️ Get text: Viettel_03
+[INFO] 09-08-2024 21:17:23 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Viettel_03 🟰 Viettel_03
+[INFO] 09-08-2024 21:17:23 [TestNG-PoolService-1] LogUtils - ➡️ Get text: 101
+[INFO] 09-08-2024 21:17:23 [TestNG-PoolService-1] LogUtils - 🍀 Total Customers After: 101
+[INFO] 09-08-2024 21:17:23 [TestNG-PoolService-1] LogUtils - ➡️ Get text: 101
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //tbody/tr[1]/td[3]/a
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: Viettel_03
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Viettel_03 🟰 Viettel_03
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: 10
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: 10 🟰 10
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: 123456
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: 123456 🟰 123456
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: https://viettel.com.vn
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: https://viettel.com.vn 🟰 https://viettel.com.vn
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: VIP
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: VIP 🟰 VIP
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: Vietnamese
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Vietnamese 🟰 Vietnamese
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ➡️ Attribute value: Cau Giay
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - ⭐️ Assert equals: Cau Giay 🟰 Cau Giay
+[INFO] 09-08-2024 21:17:24 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //span[normalize-space()='Projects']
+[INFO] 09-08-2024 21:17:25 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:25 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //a[normalize-space()='New Project']
+[INFO] 09-08-2024 21:17:25 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:25 [TestNG-PoolService-1] LogUtils - 🟢 Click element: By.xpath: //button[@data-id='clientid']
+[INFO] 09-08-2024 21:17:25 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:26 [TestNG-PoolService-1] LogUtils - 🟢 Set text: Viettel_03 on element By.xpath: //button[@data-id='clientid']/following-sibling::div//input
+[INFO] 09-08-2024 21:17:26 [TestNG-PoolService-1] LogUtils - Screenshot successfully !!
+[INFO] 09-08-2024 21:17:27 [TestNG-PoolService-1] LogUtils - ✅ Test case testAddNewCustomer passed.
+[INFO] 09-08-2024 21:17:28 [main] LogUtils - ⭐️ ********* END TESTING SeleniumTestNGParallel112023 *********
