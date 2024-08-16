@@ -5,7 +5,9 @@ import com.anhtester.drivers.DriverManager;
 import com.anhtester.helpers.CaptureHelper;
 import com.anhtester.helpers.PropertiesHelper;
 import com.anhtester.helpers.SystemHelper;
+import com.anhtester.reports.ExtentTestManager;
 import com.anhtester.utils.LogUtils;
+import com.aventstack.extentreports.Status;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -61,6 +63,7 @@ public class WebUI {
         DriverManager.getDriver().get(url);
         sleep(STEP_TIME);
         LogUtils.info("\uD83C\uDF10 Open URL: " + url);
+        ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Open URL: " + url);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("openURL_" + url));
         }
@@ -71,6 +74,7 @@ public class WebUI {
         sleep(STEP_TIME);
         getWebElement(by).click();
         LogUtils.info("\uD83D\uDFE2 Click element: " + by);
+        ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Click element: " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
         }
@@ -81,6 +85,7 @@ public class WebUI {
         sleep(STEP_TIME);
         getWebElement(by).click();
         LogUtils.info("\uD83D\uDFE2 Click element: " + by);
+        ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Click element: " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
         }
@@ -91,7 +96,7 @@ public class WebUI {
         sleep(STEP_TIME);
         getWebElement(by).sendKeys(value);
         LogUtils.info("\uD83D\uDFE2 Set text: " + value + " on element " + by);
-
+        ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Set text: " + value + " on element " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("setText_" + by.toString()));
         }
@@ -99,6 +104,8 @@ public class WebUI {
 
     public static void setKey(By by, Keys keys) {
         getWebElement(by).sendKeys(keys);
+        LogUtils.info("\uD83D\uDFE2 Set key: " + keys.name() + " on element " + by);
+        ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Set key: " + keys.name() + " on element " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("setKey_" + by.toString()));
         }
@@ -109,6 +116,7 @@ public class WebUI {
         sleep(STEP_TIME);
         String text = getWebElement(by).getText();
         LogUtils.info("➡\uFE0F Get text: " + text);
+        ExtentTestManager.logMessage(Status.PASS, "➡\uFE0F Get text: " + text);
         return text;
     }
 
@@ -304,6 +312,7 @@ public class WebUI {
     public static boolean verifyEquals(Object actual, Object expected) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Verify equals: " + actual + " \uD83D\uDFF0 " + expected);
+        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Verify equals: " + actual + " \uD83D\uDFF0 " + expected);
         boolean check = actual.equals(expected);
         return check;
     }
@@ -311,12 +320,14 @@ public class WebUI {
     public static void assertEquals(Object actual, Object expected, String message) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Assert equals: " + actual + " \uD83D\uDFF0 " + expected);
+        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Assert equals: " + actual + " \uD83D\uDFF0 " + expected);
         Assert.assertEquals(actual, expected, message);
     }
 
     public static boolean verifyContains(String actual, String expected) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Verify contains: " + actual + " and " + expected);
+        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Verify contains: " + actual + " and " + expected);
         boolean check = actual.contains(expected);
         return check;
     }
@@ -324,6 +335,7 @@ public class WebUI {
     public static void assertContains(String actual, String expected, String message) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Assert contains: " + actual + " and " + expected);
+        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Assert contains: " + actual + " and " + expected);
         boolean check = actual.contains(expected);
         Assert.assertTrue(check, message);
     }
@@ -413,9 +425,11 @@ public class WebUI {
 
         if (listElement.size() > 0) {
             LogUtils.info("Element " + by + " existing.");
+            ExtentTestManager.logMessage(Status.INFO, "Element " + by + " existing.");
             return true;
         } else {
             LogUtils.info("Element " + by + " NOT exist.");
+            ExtentTestManager.logMessage(Status.INFO, "Element " + by + " NOT exist.");
             return false;
         }
     }
