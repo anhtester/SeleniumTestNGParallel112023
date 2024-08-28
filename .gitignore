@@ -20,3 +20,4 @@ out/
 *.iml
 exports/
 logs/
+allure-report*/

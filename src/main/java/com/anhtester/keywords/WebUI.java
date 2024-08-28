@@ -5,9 +5,11 @@ import com.anhtester.drivers.DriverManager;
 import com.anhtester.helpers.CaptureHelper;
 import com.anhtester.helpers.PropertiesHelper;
 import com.anhtester.helpers.SystemHelper;
+import com.anhtester.reports.AllureManager;
 import com.anhtester.reports.ExtentTestManager;
 import com.anhtester.utils.LogUtils;
 import com.aventstack.extentreports.Status;
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -59,6 +61,7 @@ public class WebUI {
         }
     }
 
+    @Step("Open url {0}")
     public static void openURL(String url) {
         DriverManager.getDriver().get(url);
         sleep(STEP_TIME);
@@ -66,9 +69,12 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Open URL: " + url);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("openURL_" + url));
+            ExtentTestManager.addScreenshot(SystemHelper.makeSlug("openURL_" + url));
+            AllureManager.saveScreenshotPNG();
         }
     }
 
+    @Step("Click element {0}")
     public static void clickElement(By by) {
         waitForElementClickable(by);
         sleep(STEP_TIME);
@@ -77,9 +83,12 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Click element: " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
+            ExtentTestManager.addScreenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
+            AllureManager.saveScreenshotPNG();
         }
     }
 
+    @Step("Click element {0} with timeout {1}")
     public static void clickElement(By by, long timeout) {
         waitForElementClickable(by);
         sleep(STEP_TIME);
@@ -88,9 +97,12 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Click element: " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
+            ExtentTestManager.addScreenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
+            AllureManager.saveScreenshotPNG();
         }
     }
 
+    @Step("Set text {1} on element {0}")
     public static void setText(By by, String value) {
         waitForElementPresent(by);
         sleep(STEP_TIME);
@@ -99,24 +111,31 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Set text: " + value + " on element " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("setText_" + by.toString()));
+            ExtentTestManager.addScreenshot(SystemHelper.makeSlug("setText_" + by.toString()));
+            AllureManager.saveScreenshotPNG();
         }
     }
 
+    @Step("Set key {1} on element {0}")
     public static void setKey(By by, Keys keys) {
         getWebElement(by).sendKeys(keys);
         LogUtils.info("\uD83D\uDFE2 Set key: " + keys.name() + " on element " + by);
         ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Set key: " + keys.name() + " on element " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("setKey_" + by.toString()));
+            ExtentTestManager.addScreenshot(SystemHelper.makeSlug("setKey_" + by.toString()));
+            AllureManager.saveScreenshotPNG();
         }
     }
 
+    @Step("Get text of element {0}")
     public static String getElementText(By by) {
         waitForElementVisible(by);
         sleep(STEP_TIME);
         String text = getWebElement(by).getText();
         LogUtils.info("➡\uFE0F Get text: " + text);
         ExtentTestManager.logMessage(Status.PASS, "➡\uFE0F Get text: " + text);
+        AllureManager.saveTextLog("➡\uFE0F Get text: " + text);
         return text;
     }
 

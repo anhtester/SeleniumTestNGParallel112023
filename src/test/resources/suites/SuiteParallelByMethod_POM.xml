@@ -3,7 +3,7 @@
 <suite name="Suite Demo Parallel Testing By Methods" verbose="1">
     <test name="Demo Parallel Testing By Methods" parallel="methods">
         <classes>
-            <class name="com.anhtester.Bai28_ExcelFileData.testcases.LoginTest"/>
+            <class name="com.anhtester.Bai31_TestListener.testcases.LoginTest"/>
         </classes>
     </test>
 </suite>

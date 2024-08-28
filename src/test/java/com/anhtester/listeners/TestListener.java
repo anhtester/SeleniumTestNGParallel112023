@@ -2,6 +2,7 @@ package com.anhtester.listeners;
 
 import com.anhtester.helpers.CaptureHelper;
 import com.anhtester.helpers.PropertiesHelper;
+import com.anhtester.reports.AllureManager;
 import com.anhtester.reports.ExtentReportManager;
 import com.anhtester.reports.ExtentTestManager;
 import com.anhtester.utils.LogUtils;
@@ -69,12 +70,17 @@ public class TestListener implements ITestListener {
         LogUtils.error(iTestResult.getThrowable());
 
         //Extent Report
-        ExtentTestManager.addScreenshot(getTestName(iTestResult));
         ExtentTestManager.logMessage(Status.FAIL, iTestResult.getThrowable().toString());
         ExtentTestManager.logMessage(Status.FAIL, getTestName(iTestResult) + " is failed.");
 
+        //Allure Report
+        //AllureManager.saveTextLog(iTestResult.getThrowable().toString());
+        //AllureManager.saveTextLog(iTestResult.getName() + " is failed.");
+
         if(PropertiesHelper.getValue("SCREENSHOT_STEP_FAIL").equals("true")) {
             CaptureHelper.screenshot(getTestName(iTestResult));
+            ExtentTestManager.addScreenshot(getTestName(iTestResult));
+            AllureManager.saveScreenshotPNG();
         }
 
         if(PropertiesHelper.getValue("RECORD_VIDEO").equals("true")){
