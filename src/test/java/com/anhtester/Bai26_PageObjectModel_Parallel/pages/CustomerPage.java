@@ -2,9 +2,14 @@ package com.anhtester.Bai26_PageObjectModel_Parallel.pages;
 
 import com.anhtester.drivers.DriverManager;
 import com.anhtester.keywords.WebUI;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
+import java.util.List;
 
 import static com.anhtester.keywords.WebUI.*;
 
@@ -81,6 +86,14 @@ public class CustomerPage extends CommonPage {
         WebUI.waitForPageLoaded();
         Assert.assertTrue(checkElementExist(alertMessage), "\uD83D\uDC1E FAIL!! The alert message success not display.");
         Assert.assertEquals(DriverManager.getDriver().findElement(alertMessage).getText().trim(), "Customer added successfully.", "\uD83D\uDC1E FAIL!! The content of alert message not match.");
+    }
+
+    public void searchAndCheckDataInTable(int column, String data, String columnName){
+        waitForPageLoaded();
+        setText(inputSearchCustomer, data);
+        sleep(2);
+        waitForPageLoaded();
+        WebUI.checkDataInTableByColumn_Contains(column, data, columnName);
     }
 
     public void checkCustomerInTableList(String customerName) {

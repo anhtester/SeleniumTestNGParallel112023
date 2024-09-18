@@ -1,5 +1,6 @@
 package com.anhtester.common;
 
+import com.anhtester.Bai26_PageObjectModel_Parallel.pages.CommonPage;
 import com.anhtester.drivers.DriverManager;
 import com.anhtester.helpers.CaptureHelper;
 import com.anhtester.helpers.PropertiesHelper;
@@ -13,7 +14,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 @Listeners(TestListener.class)
-public class BaseTest {
+public class BaseTest extends CommonPage {
 
     @BeforeMethod
     @Parameters({"browser"})
