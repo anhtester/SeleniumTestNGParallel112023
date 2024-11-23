@@ -88,6 +88,11 @@ public class CustomerPage extends CommonPage {
         Assert.assertEquals(DriverManager.getDriver().findElement(alertMessage).getText().trim(), "Customer added successfully.", "\uD83D\uDC1E FAIL!! The content of alert message not match.");
     }
 
+    public void searchDataCustomer(String data){
+        waitForPageLoaded();
+        setText(inputSearchCustomer, data);
+    }
+
     public void searchAndCheckDataInTable(int column, String data, String columnName){
         waitForPageLoaded();
         setText(inputSearchCustomer, data);

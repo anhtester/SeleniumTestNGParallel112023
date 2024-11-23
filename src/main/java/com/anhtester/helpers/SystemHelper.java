@@ -1,5 +1,7 @@
 package com.anhtester.helpers;
 
+import com.anhtester.utils.LogUtils;
+
 import java.io.File;
 import java.text.Normalizer;
 import java.util.Locale;
@@ -9,6 +11,18 @@ public class SystemHelper {
 
     private static final Pattern NONLATIN = Pattern.compile("[^\\w-]");
     private static final Pattern WHITESPACE = Pattern.compile("[\\s]");
+
+    public static String removeSpecialCharacters(String str){
+        // Normalize the string to decompose diacritical marks
+        String normalized = Normalizer.normalize(str, Normalizer.Form.NFD);
+
+        // Remove diacritical marks by replacing non-ASCII characters
+        String result = normalized.replaceAll("\\p{M}", "");
+
+        LogUtils.info("Result: " + result);
+
+        return result;
+    }
 
     public static String makeSlug(String input) {
         if (input == null)

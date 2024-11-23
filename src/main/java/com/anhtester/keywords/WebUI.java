@@ -49,7 +49,7 @@ public class WebUI {
 
             LogUtils.info(value + " - ");
             LogUtils.info(elementCheck.getText());
-            Assert.assertTrue(elementCheck.getText().toUpperCase().contains(value.toUpperCase()), "Dòng số " + i + " không chứa giá trị tìm kiếm.");
+            Assert.assertTrue(SystemHelper.removeSpecialCharacters(elementCheck.getText()).toUpperCase().contains(SystemHelper.removeSpecialCharacters(value).toUpperCase()), "Dòng số " + i + " không chứa giá trị tìm kiếm.");
         }
 
     }
