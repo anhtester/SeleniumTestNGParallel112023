@@ -21,3 +21,4 @@ out/
 exports/
 logs/
 allure-report*/
+test-output/
