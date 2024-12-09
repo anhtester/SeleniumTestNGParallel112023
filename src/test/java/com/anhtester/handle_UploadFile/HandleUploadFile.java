@@ -11,24 +11,29 @@ import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
 
 public class HandleUploadFile extends BaseTest {
     @Test
     public void testUploadFileWithSendKeys() {
-        WebUI.openURL("https://cgi-lib.berkeley.edu/ex/fup.html");
+        WebUI.openURL("https://the-internet.herokuapp.com/upload");
 
         WebUI.waitForPageLoaded();
         WebUI.sleep(2);
 
-        By inputFileUpload = By.xpath("//input[@name='upfile']");
+        By inputFileUpload = By.xpath("//input[@id='file-upload']");
 
-        String filePath = SystemHelper.getCurrentDir() + "src\\test\\resources\\testdata\\image2.jpg";
-        WebUI.setText(inputFileUpload, filePath);
+        //String filePath = SystemHelper.getCurrentDir() + "src\\test\\resources\\testdata\\image2.jpg";
+
+        //Dùng File.separator để tự động thay thế dấu phân cách đường dẫn trên hệ điều hành
+        String filePath2 = SystemHelper.getCurrentDir() + "src" + File.separator + "test" + File.separator + "resources" + File.separator + "testdata" + File.separator + "image2.jpg";
+
+        WebUI.setText(inputFileUpload, filePath2);
 
         WebUI.sleep(2);
-        WebUI.clickElement(By.xpath("//input[@value='Press']"));
+        WebUI.clickElement(By.xpath("//input[@id='file-submit']"));
         WebUI.waitForPageLoaded();
-        Assert.assertTrue(WebUI.checkElementExist(By.xpath("//h1[normalize-space()='File Upload Results']")), "Can not upload file.");
+        Assert.assertTrue(WebUI.checkElementExist(By.xpath("//h3[normalize-space()='File Uploaded!']")), "Can not upload file.");
     }
 
     @Test
